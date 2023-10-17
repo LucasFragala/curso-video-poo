@@ -24,6 +24,7 @@ class ContaBanco {
             echo "<p>Conta está em débito. Impossível encerrar</p>";
         } else {
             $this->setStatus(false);
+            echo "<p>Conta de ".$this->getDono()." fechada com sucesso</p>";
         }
     }
     public function depositar($v) {
@@ -37,7 +38,7 @@ class ContaBanco {
     }
     public function sacar($v) {
         if ($this->getStatus()){
-            if ($this->getSaldo() > $v){
+            if ($this->getSaldo() >= $v){
                //$this->saldo = $this->saldo - $v;
                 $this->setSaldo ($this->getSaldo() - $v);
                 echo "<p>".$this->getDono(). " Saque de " .$v. " realizado com sucesso</p>";
@@ -56,6 +57,7 @@ class ContaBanco {
         }
         if ($this->getStatus()){
             $this->setSaldo($this->getSaldo() - $v);
+            echo "<p>Mensalidade de ".$v." debitada na conta de " .$this->getDono()."</p>";
         } else {
             echo "<p>Problemas com a conta. Não posso cobrar. </p>";
         }
