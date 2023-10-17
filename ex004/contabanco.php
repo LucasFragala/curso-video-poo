@@ -13,7 +13,7 @@ class ContaBanco {
         if ($t == "CC") {
             $this->setSaldo(50);
         } elseif ($t == "CP") {
-            $this->saldo = 150;
+            $this->setSaldo(150);
         }
 
     }
@@ -28,7 +28,8 @@ class ContaBanco {
     }
     public function depositar($v) {
         if ($this->getStatus()) {
-            $this->setStatus($this->getSaldo() + $v);
+            $this->setSaldo($this->getSaldo() + $v);
+            echo "<p> Depósito de " .$v. " na conta de " .$this->getDono(). "</p>";
             //$this->saldo = $this->saldo + $v;
         }else {
             echo "<p>Conta fechada. Não consigo depositar </p>";
@@ -39,6 +40,7 @@ class ContaBanco {
             if ($this->getSaldo() > $v){
                //$this->saldo = $this->saldo - $v;
                 $this->setSaldo ($this->getSaldo() - $v);
+                echo "<p>".$this->getDono(). " Saque de " .$v. " realizado com sucesso</p>";
             } else {
                 echo "<p>Saldo insuficiente para saque.</p>";
             }

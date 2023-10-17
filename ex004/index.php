@@ -17,6 +17,12 @@
     $p2->setNumConta("06925");
     $p2->setDono("Fernanda");
 
+    $p1->depositar(300);
+    $p2->depositar(500);
+
+    $p2->sacar(200);
+    $p2->sacar(200);
+
     print_r($p1);
     print_r($p2);
 ?>
