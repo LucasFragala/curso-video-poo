@@ -8,6 +8,17 @@
 <body>
 <?php 
     require_once 'contabanco.php';
+    $p1 = new ContaBanco(); //Lucas
+    $p2 = new ContaBanco(); // Fernanda
+    $p1->abrirConta("CC");
+    $p1->setNumConta("09321");
+    $p1->setDono("Lucas");
+    $p2->abrirConta("CP");
+    $p2->setNumConta("06925");
+    $p2->setDono("Fernanda");
+
+    print_r($p1);
+    print_r($p2);
 ?>
 </body>
 </html>
