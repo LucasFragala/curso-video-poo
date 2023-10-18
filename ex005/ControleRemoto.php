@@ -2,12 +2,12 @@
 require_once 'Controlador.php';
 
 class ControleRemoto implements Controlador {
-    //Atributos
+    //Atributos.
     private $volume;
     private $ligado;
     private $tocando;
 
-    //Métodos especiais
+    //Métodos especiais.
     public function __construct() {
         $this->volume = 50;
         $this->ligado = true;
